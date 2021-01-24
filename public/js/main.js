@@ -105,7 +105,7 @@ let produits = {
 let épicerie = {
     nom: "épicerie",
     personnes: [],
-    panier: [
+    paniers: [
         {
             type: "panier",
             contenu : []
@@ -120,7 +120,6 @@ let poele={
             console.log(`Mon ${poele.contenu[0].nom} est actuellement  à l'état ${poele.contenu[0].état}`);}, 4000)
     }
 }
-
 let bol={
     contenu: [],
     mélanger(nomMélange){
@@ -136,17 +135,22 @@ let bol={
 personnage.seDeplacer(maison);
 personnage.seDeplacer(épicerie);
 
-personnage.mainDroite.push(épicerie.panier[0]);
-console.log(`Nombre de panier(s) dans l'épicerie avant le changement: ${épicerie.panier.length} `);
+personnage.mainDroite.push(épicerie.paniers[0]);
+console.log(`Nombre de panier(s) dans l'épicerie avant: ${épicerie.paniers.length} `);
 
-épicerie.panier.pop(épicerie.panier[0]);
+épicerie.paniers.pop(épicerie.paniers[0]);
 
 console.log(`La main droite de ${personnage.nom} contient un ${personnage.mainDroite[0].type}`);
 
-console.log(`Nombre de panier(s) dans l'épicerie après le changement: ${épicerie.panier.length} `);
+console.log(`Nombre de panier(s) dans l'épicerie après: ${épicerie.paniers.length} `);
 for (let i = 0; i < épicerie.ingrédients.length; i++) {
     personnage.mainDroite[0].contenu.push(épicerie.ingrédients[i]);
     console.log(`${épicerie.ingrédients[i].nom} à été ajouter a mon panier`);
 }
+personnage.payerArticles();
+personnage.seDeplacer(maison);
 
-
+for (let i = 0; i <personnage.mainDroite[0].contenu.length; i++) {
+    bol.contenu.push(personnage.mainDroite[0].contenu[i]);
+    console.log(`${bol.contenu[i].nom} à été ajouté dans mon bol`);
+}
