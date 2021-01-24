@@ -105,7 +105,7 @@ let produits = {
 let épicerie = {
     nom: "épicerie",
     personnes: [],
-    paniers: [
+    panier: [
         {
             type: "panier",
             contenu : []
@@ -121,7 +121,6 @@ let poele={
     }
 }
 
-
 let bol={
     contenu: [],
     mélanger(nomMélange){
@@ -132,8 +131,22 @@ let bol={
         this.contenu = [];
         this.contenu.push(nouveauMélange);
     }
+}
 
+personnage.seDeplacer(maison);
+personnage.seDeplacer(épicerie);
 
+personnage.mainDroite.push(épicerie.panier[0]);
+console.log(`Nombre de panier(s) dans l'épicerie avant le changement: ${épicerie.panier.length} `);
+
+épicerie.panier.pop(épicerie.panier[0]);
+
+console.log(`La main droite de ${personnage.nom} contient un ${personnage.mainDroite[0].type}`);
+
+console.log(`Nombre de panier(s) dans l'épicerie après le changement: ${épicerie.panier.length} `);
+for (let i = 0; i < épicerie.ingrédients.length; i++) {
+    personnage.mainDroite[0].contenu.push(épicerie.ingrédients[i]);
+    console.log(`${épicerie.ingrédients[i].nom} à été ajouter a mon panier`);
 }
 
 
