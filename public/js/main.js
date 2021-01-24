@@ -113,5 +113,27 @@ let épicerie = {
     ],
     ingrédients:[produits.oignon, produits.oeuf,produits.épice, produits.fromage]
 }
+let poele={
+    contenu: [],
+    cuire(){
+        setTimeout(()=> {this.contenu[0].état = "cuit",
+            console.log(`Mon ${poele.contenu[0].nom} est actuellement  à l'état ${poele.contenu[0].état}`);}, 4000)
+    }
+}
+
+
+let bol={
+    contenu: [],
+    mélanger(nomMélange){
+        const nouveauMélange = {
+            nom: nomMélange,
+            état: "pas cuit"
+        }
+        this.contenu = [];
+        this.contenu.push(nouveauMélange);
+    }
+
+
+}
 
 
