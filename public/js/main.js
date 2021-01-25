@@ -21,7 +21,7 @@ let personnage = {
         lieu.personnes.push(personnage.nom);
         console.log(`${personnage.nom} est actuellement à la ${personnage.lieu}`);
          if(maison.personnes[0]){
-            console.log(`La maison actuellement occuper par: ${maison.personnes[0]}`);
+            console.log(`La maison est actuellement occuper par: ${maison.personnes[0]}`);
         }else{
             console.log("La maison est  actuellement vide.");
         }
@@ -145,14 +145,14 @@ console.log(`La main droite de ${personnage.nom} contient un ${personnage.mainDr
 console.log(`Nombre de panier(s) dans l'épicerie après: ${épicerie.paniers.length} `);
 for (let i = 0; i < épicerie.ingrédients.length; i++) {
     personnage.mainDroite[0].contenu.push(épicerie.ingrédients[i]);
-    console.log(`${épicerie.ingrédients[i].nom} à été ajouter a mon panier`);
+    console.log(`l'ingredient ${épicerie.ingrédients[i].nom} à été ajouter a mon panier`);
 }
 personnage.payerArticles();
 personnage.seDeplacer(maison);
 
 for (let i = 0; i <personnage.mainDroite[0].contenu.length; i++) {
     bol.contenu.push(personnage.mainDroite[0].contenu[i]);
-    console.log(`${bol.contenu[i].nom} à été ajouté dans mon bol`);
+    console.log(`l'ingredient ${bol.contenu[i].nom} à été ajouté dans mon bol`);
 }
 // methode bol
 bol.mélanger("omelette");
