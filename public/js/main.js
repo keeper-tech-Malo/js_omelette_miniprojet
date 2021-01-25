@@ -154,3 +154,16 @@ for (let i = 0; i <personnage.mainDroite[0].contenu.length; i++) {
     bol.contenu.push(personnage.mainDroite[0].contenu[i]);
     console.log(`${bol.contenu[i].nom} à été ajouté dans mon bol`);
 }
+// methode bol
+bol.mélanger("omelette");
+console.log(`Mon bol contient une ${bol.contenu[0].nom} qui a l'état: ${bol.contenu[0].état}`);
+console.log(`Mon bol contient ${bol.contenu.length} élément(s)`);
+
+poele.contenu.push(bol.contenu[0]);
+console.log(`${poele.contenu[0].nom} à été ajouté dans ma poele`);
+console.log(`Ma poele contient ${poele.contenu.length} élément(s)`);
+
+bol.contenu = [];
+console.log(`Mon bol contient ${bol.contenu.length} élément(s)`);
+
+poele.cuire();
